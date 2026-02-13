@@ -7,9 +7,10 @@ def fetch_eligible_schemes(user):
     cursor=conn.cursor()
 
     query="""
-        SELECT name,benefit,description 
+        SELECT name,benefit,description,category,income_limit,benefit_amount,
+        required_documents,priority_weight 
         FROM schemes
-        WHERE LOWER(state) =LOWER(%s)
+        WHERE (state='ALL' OR LOWER(state) =LOWER(%s))
         AND LOWER(occupation) =LOWER(%s)
         AND income_limit>=%s;
     """
@@ -19,10 +20,16 @@ def fetch_eligible_schemes(user):
     conn.close()
     schemes=[
         {
-            "name":row[0],
-         "benefit":row[1],
-         "description":row[2]
+            "name": row[0],
+         "benefit": row[1],
+         "description": row[2],
+         "category": row[3],
+         "income_limit": row[4],
+         "benefit_amount": row[5],
+         "required_documents": row[6],
+         "priority_weight": row[7],
         }
         for row in results
+        
     ]
     return schemes
