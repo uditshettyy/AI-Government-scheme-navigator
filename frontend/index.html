@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <title>Scheme Navigator</title>
+            <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Scheme Navigator</h1>
+        <p>Find the Best governmnet schemes for you.</p>
+        <form id="scheme-form">
+            <input type="number" id="age" placeholder="Age" required/>
+            <input type="number" id="income" placeholder="Annual Income" required/>
+            <select id="state" required>
+                <option value="">Select State</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Maharashtra">Maharashtra</option>
+            </select>
+            <select id="occupation" required>
+                <option value="">Select occupation</option>
+                <option value="farmer">farmer</option>
+                <option value="student">student</option>
+                <option value="unemployed">unemployed</option>
+            </select>
+
+            <button type="submit">Check schemes</button>
+        </form>
+        <div id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -2,10 +2,19 @@ from fastapi import FastAPI
 from app.schemas import Userinput
 from app.services.scheme_service import fetch_eligible_schemes
 from app.services.ai_service import generate_ai_explaination
- 
+from fastapi.middleware.cors import CORSMiddleware
+
+
+
 app=FastAPI()
 
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def home():
