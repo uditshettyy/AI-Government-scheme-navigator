@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-            <title>Scheme Navigator</title>
-            <link rel="stylesheet" href="style.css">
+    <title>AI Government Services Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Scheme Navigator</h1>
-        <p>Find the Best governmnet schemes for you.</p>
-        <form id="scheme-form">
-            <input type="number" id="age" placeholder="Age" required/>
-            <input type="number" id="income" placeholder="Annual Income" required/>
-            <select id="state" required>
-                <option value="">Select State</option>
-                <option value="Karnataka">Karnataka</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Maharashtra">Maharashtra</option>
-            </select>
-            <select id="occupation" required>
-                <option value="">Select occupation</option>
-                <option value="farmer">farmer</option>
-                <option value="student">student</option>
-                <option value="unemployed">unemployed</option>
-            </select>
 
-            <button type="submit">Check schemes</button>
-        </form>
-        <div id="results"></div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>AI Government Services Portal</h1>
+            <p>Find and Apply for Government Benefits</p>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+
+        <!-- LEFT SIDE: FORM -->
+        <div class="form-section">
+            <h2>Eligibility Check</h2>
+
+            <form id="scheme-form">
+                <input type="number" id="age" placeholder="Age" required />
+                <input type="number" id="income" placeholder="Annual Income (₹)" required />
+
+                <select id="state" required>
+                    <option value="">Select State</option>
+                </select>
+
+                <select id="occupation" required>
+                    <option value="">Select Occupation</option>
+                </select>
+
+                <button type="submit">Search for Schemes</button>
+            </form>
+        </div>
+
+        <!-- RIGHT SIDE: RESULTS -->
+        <div class="results-section">
+            <h2>Results</h2>
+            <div id="results">
+                <p class="placeholder">Submit your details to view eligible schemes.</p>
+            </div>
+        </div>
+
     </div>
 
     <script src="script.js"></script>

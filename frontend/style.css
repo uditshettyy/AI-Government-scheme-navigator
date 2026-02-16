@@ -1,35 +1,151 @@
 body {
-    font-family: Arial;
-    background: #f4f6f8;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+/* HERO HEADER */
+.hero {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.hero p {
+    margin-top: 8px;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* MAIN LAYOUT */
+.main-wrapper {
     display: flex;
-    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.container {
-    width: 600px;
-    margin-top: 40px;
+/* FORM SECTION */
+.form-section {
+    flex: 1;
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-input, select, button {
+.form-section h2 {
+    margin-top: 0;
+}
+
+input, select {
     width: 100%;
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #2a5298;
+    box-shadow: 0 0 6px rgba(42, 82, 152, 0.3);
 }
 
 button {
-    background: #2e7d32;
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    background: #2a5298;
     color: white;
     border: none;
+    border-radius: 8px;
+    font-size: 15px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
+button:hover {
+    background: #1e3c72;
+}
+
+/* RESULTS SECTION */
+.results-section {
+    flex: 2;
+}
+
+.results-section h2 {
+    margin-top: 0;
+}
+
+/* SCHEME CARD */
 .scheme-card {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 6px solid #2a5298;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.scheme-card h3 {
+    margin-top: 0;
+}
+
+.scheme-card p {
+    margin: 6px 0;
+}
+
+/* SUMMARY CARD */
+.summary-card {
+    background: #e3f2fd;
+    border-left: 6px solid #1565c0;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    margin-top: 25px;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    background: #2e7d32;
+    color: white;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+}
+
+.docs ul {
+    padding-left: 20px;
+}
+
+.apply-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 14px;
+    background: #1565c0;
+    color: white;
+    text-decoration: none;
     border-radius: 6px;
+    font-size: 14px;
+}
+
+.apply-btn:hover {
+    background: #0d47a1;
+}
+
+.placeholder {
+    color: #777;
 }

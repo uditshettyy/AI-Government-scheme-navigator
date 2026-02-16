@@ -5,15 +5,14 @@ def fetch_eligible_schemes(user):
 
     conn=get_connection()
     cursor=conn.cursor()
-
-    query="""
-        SELECT name,benefit,description,category,income_limit,benefit_amount,
-        required_documents,priority_weight 
+    query = """
+        SELECT name, benefit, description, category, income_limit,
+        benefit_amount, required_documents, priority_weight
         FROM schemes
-        WHERE (state='ALL' OR LOWER(state) =LOWER(%s))
-        AND LOWER(occupation) =LOWER(%s)
-        AND income_limit>=%s;
-    """
+        WHERE (LOWER(state) = 'all' OR LOWER(state) = LOWER(%s))
+        AND LOWER(TRIM(occupation)) = LOWER(TRIM(%s))
+        AND income_limit >= %s;
+        """
     cursor.execute(query,(user.state,user.occupation,user.income))
     results=cursor.fetchall()
     cursor.close()
