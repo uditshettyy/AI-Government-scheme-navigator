@@ -1,2 +1,12 @@
-#Environment Variables
+# Environment Variables
 .env
+
+# Virtual Environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Gunicorn socket
+gunicorn.ctl
